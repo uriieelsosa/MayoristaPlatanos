@@ -1,110 +1,71 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayorista Platanos</title>
-    
-<link rel="icon" type="favicon" href="img/icono.jpg">
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Iniciar Sesión</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" type="image/x-icon" href="img/icono.jpg" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body{
+        background:  #ff6f00;
+        background: linear-gradient(to right, #ff6f00, #ffe259);
+      }
+      .bg{
+        background-image: url(img/login.jpg);
+        background-position: center center;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <main >
+      <div class="container w-100 bg-orange rounded shadow my-5">
+        <div class="row ">
+          <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"></div>
+          <div class="col bg-white p-5 rounded-end">
+            <div class="text-end">
+              <a href="index.html"><img src="img/icono.jpg" alt="logo" width="68" class="rounded-circle" title="Volver a la página de inicio" /></a>
+            </div>
+            <h2 class="text-center fw-bold py-5">Iniciar Sesión</h2>
 
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
-
-  <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="#">
-    <img src="img/icono.jpg" width="30" height="30" class="d-inline-block align-top" alt="Logo Mayorista">
-    Mayorista Plátanos
-  </a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link active" href="index.html">🏠 Inicio</a>
-      <a class="nav-item nav-link" href="productos.html"> Productos</a>
-      <a class="nav-item nav-link" href="ofertas.html">🔥 Ofertas</a>
-      <a class="nav-item nav-link" href="login.html">👥 ingresar</a>
-      <a class="nav-item nav-link" href="carrito.html">🛒</a>
-    </div>
-  </div>
-</nav>
-
-  <!-- CONTENIDO -->
-  <main class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-5">
-        <div class="card auth-card p-3 p-md-4">
-          <div class="card-body">
-            <h1 class="h3 text-center mb-3">Ingresar a tu cuenta</h1>
-            <p class="text-center text-muted mb-4">Accede a tu lista de precios, pedidos y facturas.</p>
-
-            <!-- Formulario -->
-            <form id="loginForm" action="/auth/login" method="post" novalidate>
-              <!-- Email -->
+            <!-- Formulario de inicio de sesión -->
+            <form action="login.php" method="POST">
               <div class="mb-3">
-                <label for="email" class="form-label">Correo electrónico</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  name="email"
-                  placeholder="cliente@empresa.com"
-                  required
-                />
-                <div class="invalid-feedback">Ingresá un correo válido.</div>
-
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required />
               </div>
-
-              <!-- Password con toggle -->
-              <div class="mb-2">
-                <label for="password" class="form-label">Contraseña</label>
-                <div class="input-group">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="password"
-                    name="password"
-                    minlength="6"
-                    placeholder="Tu contraseña"
-                    required
-                  />
-                  <button class="btn btn-outline-secondary" type="button" id="togglePass" aria-label="Mostrar u ocultar contraseña">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                  <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
-                </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña:</label>
+                <input type="password" class="form-control" id="password" name="password" required />
               </div>
-
-              <!-- Recordarme + Olvidé -->
-              <div class="d-flex justify-content-between align-items-center mb-4">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="1" id="remember" name="remember">
-                  <label class="form-check-label" for="remember">Recordarme</label>
-                </div>
-                <a href="recuperar.html" class="link-mayorista">Olvidé mi contraseña</a>
+              <div class="mb-3 form-check">
+                <input class="form-check-input" type="checkbox" value="" id="mantener-sesion" />
+                <label class="form-check-label" for="mantener-sesion"> Mantener sesión iniciada </label>
               </div>
-
-              <!-- Botón -->
-              <button id="submitBtn" type="submit" class="btn btn-mayorista w-100">
-                <span class="btn-text">Ingresar</span>
-                <span class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
-              </button>
-
-              <!-- Divider -->
-              <div class="text-center text-muted my-3">— ¿No tenés cuenta? —</div>
-
-              <!-- Crear cuenta -->
-              <a class="btn btn-outline-secondary w-100" href="registro.html">
-                Crear cuenta mayorista
-              </a>
+              <div class="my-3">
+                <span>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></span> <br>
+                <span><a href="#">Recuperar tu contraseña</a></span>
+              </div>
+              <div class="text-center my-5">
+                <button type="submit" class="btn btn-outline-warning w-50">Iniciar Sesión</button>
+              </div>
             </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
 
-            <!-- Info adicional -->
-            <div class="mt-4 small text-muted">
-            </main>
+
