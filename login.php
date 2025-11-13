@@ -1,3 +1,40 @@
+<?php
+// login.php    
+
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    require 'db_conn.php';
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $query = "SELECT * FROM usuario WHERE mail = '$email' AND contra = '$password'";
+   
+    $result =  mysqli_query($conexion, $query);
+
+    if ($result->num_rows > 0) {
+         $usuario = mysqli_fetch_assoc($result);
+         $nombre = $usuario['nombre'];
+         $activo = $usuario['activo'];
+         $tipo_user = $usuario['tipo_user'];
+
+        if ($activo == 1) {
+            
+
+
+            
+        }else {
+            echo "<script>alert('Su cuenta está inactiva. Por favor, contacte al administrador.'); window.location.href = 'login.php';</script>";
+            exit;
+        } 
+
+
+    }else{
+        echo "Credenciales inválidas";
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
